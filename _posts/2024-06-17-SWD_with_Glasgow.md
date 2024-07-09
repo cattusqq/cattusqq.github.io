@@ -211,7 +211,7 @@ I updated the blink delay and recompiled the binary so I'd know if it all worked
 
 I connected the GND, SWCLK and SWDIO pins on the pico to the GND, pin0 and pin1 on the A side of the Glasgow. I did have to solder header pins onto the pico first. 
 
-![Diagram for connecting Glasgow to RPi Pico](../images/connect_glasgow_to_rpi_pico.png)
+![Diagram for connecting Glasgow to RPi Pico](/images/connect_glasgow_to_rpi_pico.png)
 
 We've done the physical part, now we have to figure out the right incantations to get the logical part working. 
 
@@ -376,7 +376,7 @@ usage: glasgow run swd-openocd [-h] [--port SPEC] [--pin-swclk NUM] [--pin-swdio
 
 Our wiring diagram in [Step 3.3](#step-33---deploy-the-pico-binary-using-swd) says to connect GND, SWCLK and SWDIO pins on the pico to the GND, pin0 and pin1 on the A side of the Glasgow. So lets update the command to reflect that. I'm omitting options that aren't required. Included below is a photo of my setup. 
 
-![Diagram for connecting Glasgow to RPi Pico](../images/photo_glasgow_rpi_pico.png)
+![Diagram for connecting Glasgow to RPi Pico](/images/photo_glasgow_rpi_pico.png)
 
 ```
 glasgow run swd-openocd -V 3.3 --pin-swdio 0 --pin-swclk 1 tcp:localhost:2222
