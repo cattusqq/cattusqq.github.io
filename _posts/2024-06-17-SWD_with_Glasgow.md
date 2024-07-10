@@ -33,10 +33,7 @@ I followed the instructions on the [Official Glasgow Documentation](https://glas
 {: .prompt-warning }
 <!-- markdownlint-restore -->
 
-[!IMPORTANT]
-
-
-```
+```bash
 $ glasgow --version
 $ glasgow build --rev C3 uart
 ```
@@ -285,7 +282,7 @@ Looking at the `tcl/interface/` directory there doesnt appear to be a Glasgow co
 
 If we open up one of the other configs, we can get a feel for what it should look like. I'm guessing the jlink would be a good analogue since it's referenced with SWD in the documentation. 
 
-```
+```bash
 $ cat tcl/interface/jlink.cfg
 # SPDX-License-Identifier: GPL-2.0-or-later
 
@@ -375,7 +372,7 @@ In separate terminal windows, run the Glasgow and OpenOCD commands. The Glasgow 
 
 Let's review what the Glasgow command should look like by checking the help text for the swd-openocd Glasgow applet.
 
-```
+```bash
 $ glasgow run swd-openocd --help
 usage: glasgow run swd-openocd [-h] [--port SPEC] [--pin-swclk NUM] [--pin-swdio NUM] [--pin-srst NUM] [-f FREQ] (-V [VOLTS] | -M | --keep-voltage) ENDPOINT
 ```
@@ -392,7 +389,7 @@ I: g.applet.interface.swd_openocd: port(s) A, B voltage set to 3.3 V
 I: g.applet.interface.swd_openocd: socket: listening at tcp:localhost:2222
 ```
 
-```
+```bash
 $ cd openocd/tcl 
 # we have to be in this dir to reference the target config file
 
@@ -435,7 +432,7 @@ Warn : Adding extra erase range, 0x10005500 .. 0x1000ffff
 ** Resetting Target **
 shutdown command invoked
 Info : remote_bitbang interface quit
-catherine@Cats-MBP tcl %
+$
 
 ```
 
@@ -443,7 +440,8 @@ It worked! The pico rebooted and is now flashing the pattern defined in blink500
 
 If we wanted to make a Glasgow SWD config for OpenOCD, it could look something like this:
 
-```glasgow_swd.cfg
+```tcl
+# filename: glasgow_swd.cfg
 adapter driver remote_bitbang
 transport select swd
 remote_bitbang port 2222
@@ -451,7 +449,7 @@ remote_bitbang port 2222
 
 and our updated OpenOCD command would look like this:
 
-```
+```bash
 $ openocd -f interface/glasgow.cfg -f target/rp2040.cfg -c "program ../../pico/blink.elf verify reset exit"
 ```
 
@@ -459,7 +457,7 @@ $ openocd -f interface/glasgow.cfg -f target/rp2040.cfg -c "program ../../pico/b
 
 If you get the following error when you run OpenOCD, try checking your cables are seated correctly. Its telling you there's an issue connecting to the pico. The Glasgow cable group sits very loosely and pops out on me a lot resulting in this error. Just make sure everything is plugged in securely and the error should resolve. 
 
-```
+```bash
  $ openocd -f interface/glasgow.cfg -c "program ../../pico/blink.elf verify reset exit"
 Open On-Chip Debugger 0.12.0+dev-01618-gbf4be566a (2024-06-17-11:13)
 Licensed under GNU GPL v2
