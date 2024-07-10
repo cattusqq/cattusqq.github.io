@@ -27,8 +27,14 @@ Note that I am using MacOS 13.3 as my primary environment, so unless otherwise s
 ## Step 1 - Set up the Glasgow
 I followed the instructions on the [Official Glasgow Documentation](https://glasgow-embedded.org/latest/install.html) to clone the git repo down and install it with pipx.
 
+<!-- markdownlint-capture -->
+<!-- markdownlint-disable -->
+> Don't forget to check your version, and choose an applet to deploy to the FPGA. You need to deploy the right applet for the task you're going to do! Note that I'm starting with the UART applet, for reasons explained below.
+{: .prompt-warning }
+<!-- markdownlint-restore -->
+
 [!IMPORTANT]
-Don't forget to check your version, and choose an applet to deploy to the FPGA. You need to deploy the right applet for the task you're going to do! Note that I'm starting with the UART applet, for reasons explained below.
+
 
 ```
 $ glasgow --version
@@ -480,5 +486,10 @@ Info : remote_bitbang interface quit
 
 
 That's it for this post! In the next one, we'll take what we've learned one step further, and use the Glasgow Interface Explorer to directly debug the Raspberry Pi Pico CPU with gdb/lldb. See you then! 
+<hr>
+### Updates
+July 10 2024
+: I filed an [issue](https://github.com/GlasgowEmbedded/glasgow/issues/616) against the [Glasgow github repo](https://github.com/GlasgowEmbedded/glasgow) to update their documentation to let folks know how to work around the problem of the current OpenOCD release not having SWD support yet. Hopefully this will be helpful to some folks.
+
 
 
