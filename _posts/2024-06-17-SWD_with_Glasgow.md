@@ -488,6 +488,8 @@ That's it for this post! In the next one, we'll take what we've learned one step
 ### Updates
 July 10 2024
 : I filed an [issue](https://github.com/GlasgowEmbedded/glasgow/issues/616) against the [Glasgow github repo](https://github.com/GlasgowEmbedded/glasgow) to update their documentation to let folks know how to work around the problem of the current OpenOCD release not having SWD support yet. Hopefully this will be helpful to some folks.
+July 11 2024
+: The Glasgow folks updated the help text per my suggestion and this has been merged into main branch. See [commit](https://github.com/GlasgowEmbedded/glasgow/commit/553160c7e9fba4e8405923071a188813c6cae6ec) for more info.
 
 
 
