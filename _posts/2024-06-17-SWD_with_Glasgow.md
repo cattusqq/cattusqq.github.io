@@ -458,7 +458,7 @@ $ openocd -f interface/glasgow.cfg -f target/rp2040.cfg -c "program ../../pico/b
 If you get the following error when you run OpenOCD, try checking your cables are seated correctly. Its telling you there's an issue connecting to the pico. The Glasgow cable group sits very loosely and pops out on me a lot resulting in this error. Just make sure everything is plugged in securely and the error should resolve. 
 
 ```bash
- $ openocd -f interface/glasgow.cfg -c "program ../../pico/blink.elf verify reset exit"
+ $ openocd -f interface/glasgow.cfg -f target/rp2040.cfg -c "program ../../pico/blink.elf verify reset exit"
 Open On-Chip Debugger 0.12.0+dev-01618-gbf4be566a (2024-06-17-11:13)
 Licensed under GNU GPL v2
 For bug reports, read
