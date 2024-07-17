@@ -1,6 +1,6 @@
 ---
 title: "Debugging with SWD and the Glasgow Interface Explorer PART 2"
-date: 2024-08-1 12:00:00
+date: 2024-08-17 12:00:00
 categories: [Hardware, SWD, Debugging]
 tags: [hardware, swd, glasgow, debugging]     # TAG names should always be lowercase
 published: true
