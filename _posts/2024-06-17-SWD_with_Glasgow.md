@@ -1,5 +1,5 @@
 ---
-title: "SWD using Glasgow Interface Explorer PART 1/2"
+title: "SWD using Glasgow Interface Explorer PART 1"
 date: 2024-06-17 11:05:00
 categories: [Hardware, SWD]
 tags: [hardware, swd, glasgow]     # TAG names should always be lowercase
