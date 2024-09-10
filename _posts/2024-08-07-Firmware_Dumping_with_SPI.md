@@ -119,7 +119,7 @@ Let's also settle on a colour scheme for our pins, this will make things easier 
 
 Continuing with the last few blog posts, we're going to be using the [Glasgow Interface Explorer]() as our hardware interface to the flash chip. 
 
-The Glasgow is an FPGA, and can be loaded with applets specific to a goal. See my previous [SWD with Glasgow]({{ site.baseurl }}{% link /_posts/2024-06-17-SWD_with_Glasgow.md %}) post for examples of using the `uart` and `swd-openocd` applets on the Glasgow.
+The Glasgow is an FPGA, and can be loaded with applets specific to a goal. See my previous [SWD with Glasgow](https://cattusqq.github.io/posts/SWD_with_Glasgow/) post for examples of using the `uart` and `swd-openocd` applets on the Glasgow.
 
 
 For todays exercise, we need the spi-flashrom applet loaded to the Glasgow. I chose this applet by running `glasgow -h` and choosing the most appropriate applet from the output.
