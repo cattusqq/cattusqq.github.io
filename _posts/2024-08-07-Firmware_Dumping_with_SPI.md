@@ -48,10 +48,10 @@ To interact with the chip using SPI, we actually need to power the chip. There's
 # Step 4 - Identify the SPI Pins
 
 Reading the [Datasheet](https://www.alldatasheet.com/datasheet-pdf/view/313095/EON/EN56Q64-104HIP.html), we find this diagram on page 2:
-![](/images/tplink_router/serial_flash_pinout.png)
+![serial flash output](/images/tplink_router/serial_flash_pinout.png)
 
 Then on page 3 we find a table with descriptions of each pin:
-![](/images/tplink_router/cfeon_flash_pin_names.png)
+![cfeon flash pin names](/images/tplink_router/cfeon_flash_pin_names.png)
 
 Page 5 then has detailed info on each pin. 
 
@@ -112,12 +112,12 @@ Let's also settle on a colour scheme for our pins, this will make things easier 
 - Pin 5 - Data In - <span style="font-weight:bold; background-color:yellow; color:yellow">---</span> Yellow
 - Pin 6 - Clock - <span style="font-weight:bold; background-color:black; color:black">---</span> Black
 - Pin 8 - VCC - <span style="font-weight:bold; background-color:red; color:red">---</span> Red
-![](/images/tplink_router/cfeon-connected-pins-annotated.png)
+![cfeon connected pins annotated](/images/tplink_router/cfeon-connected-pins-annotated.png)
 
 
 # Step 6 - Prepare SPI Programming hardware
 
-Continuing with the last few blog posts, we're going to be using the [Glasgow Interface Explorer]() as our hardware interface to the flash chip. 
+Continuing with the last few blog posts, we're going to be using the [Glasgow Interface Explorer](https://glasgow-embedded.org) as our hardware interface to the flash chip. 
 
 The Glasgow is an FPGA, and can be loaded with applets specific to a goal. See my previous [SWD with Glasgow](https://cattusqq.github.io/posts/SWD_with_Glasgow/) post for examples of using the `uart` and `swd-openocd` applets on the Glasgow.
 
