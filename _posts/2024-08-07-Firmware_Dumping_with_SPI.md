@@ -282,7 +282,7 @@ $ flashrom -h
     digilent_spi, stlinkv3_spi, dirtyjtag_spi.
 
 ```
-Ok, so we're just specifying what kind of device our glasgow is acting as and performing any actions requires additional switches. Hmmm. I wonder if we can use one of the existing devices, or if this will be a similar case to my previous post on [SWD with Glasgow]({{ site.baseurl }}{% link /_posts/2024-06-17-SWD_with_Glasgow.md %}) where we had to checkout a specific commit of OpenOCD because the current release didn't include SWD support for the adapter driver used by the Glasgow hardware yet. [^4]
+Ok, so we're just specifying what kind of device our glasgow is acting as and performing any actions requires additional switches. Hmmm. I wonder if we can use one of the existing devices, or if this will be a similar case to my previous post on [SWD with Glasgow](https://cattusqq.github.io/posts/SWD_with_Glasgow/) where we had to checkout a specific commit of OpenOCD because the current release didn't include SWD support for the adapter driver used by the Glasgow hardware yet. [^4]
 
 [^4]: While the Glasgow has been out for a little while now, it's still gaining popularity and some features are 'mostly' implemented, or fully implemented in the Glasgow but glasgow-support hasnt been added to other software yet. This is just a factor of it being a new and volunteer based project and should improve over time.  
 
