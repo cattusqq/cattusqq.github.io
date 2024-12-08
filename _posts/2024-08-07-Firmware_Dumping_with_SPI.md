@@ -766,16 +766,17 @@ If we didnt want to mess with writing to the chip, theres still a lot of vulnera
 We could even use an emulator to emulate parts of the device, mocking out whichever components we're less interested in. This is great for testing and development as it can be faster and less expensive, but of course the gold standard of behaviour verification is still to use the device itself. 
 
 ## Be a good open source citizen 
-Get [this flashrom page](https://www.flashrom.org/supported_hw/supported_prog/serprog/overview.html) updated to include that the serprog protocol does work with the glasgow c3.
+- [ ] Get [this flashrom page](https://www.flashrom.org/supported_hw/supported_prog/serprog/overview.html) updated to include that the serprog protocol does work with the glasgow c3.
+> UPDATE: Submitted Patch: https://review.coreboot.org/c/flashrom/+/85527/1
 
 Submit PRs to flashrom
-- print the expected chip id and received chip id clearly - the verbose output as it is, is kind of ambiguous, at least I struggled at first to understand what it was conveying in verbose mode. Maybe write a verbose-verbose option with more info?
-- check if the manufacturer and chip ids are both all 0x0s, or -1(0x1f, which also happens to be Atmels code) AND the chip id is 0xFFFF (which is not a valid atmel code? confirm this), and if it is, suggest to the user to check the connection. Also, update the help text with this info. 
-- make chip scanning more efficient - `Found Eon flash chip "EN25QH64" (8192 kB, SPI) on serprog.`. But then a few lines down we see its still scanning to see if we match other chip manufacturers. It should probably stop when it finds the first match. Like I get there might be multiple chips in one manufacturer that might match, but unless in the case of a manufacturer id collision (we know of at least one) it should ideally not run through the rest. Maybe theres a reason they do it this way, its more space efficient and its running on an fpga or something, but if this is the code in flashrom, it could potentially be improved. 
+- [ ] print the expected chip id and received chip id clearly - the verbose output as it is, is kind of ambiguous, at least I struggled at first to understand what it was conveying in verbose mode. Maybe write a verbose-verbose option with more info?
+- [ ] check if the manufacturer and chip ids are both all 0x0s, or -1(0x1f, which also happens to be Atmels code) AND the chip id is 0xFFFF (which is not a valid atmel code? confirm this), and if it is, suggest to the user to check the connection. Also, update the help text with this info. 
+- [ ] make chip scanning more efficient - `Found Eon flash chip "EN25QH64" (8192 kB, SPI) on serprog.`. But then a few lines down we see its still scanning to see if we match other chip manufacturers. It should probably stop when it finds the first match. Like I get there might be multiple chips in one manufacturer that might match, but unless in the case of a manufacturer id collision (we know of at least one) it should ideally not run through the rest. Maybe theres a reason they do it this way, its more space efficient and its running on an fpga or something, but if this is the code in flashrom, it could potentially be improved. 
 
 For the Glasgow:
-The original error I was getting about port 5 something Amaranth error, submit a PR suggesting to check your cables connections in that error message. Do some testing to confirm exactly what conditions (using two connected cables for each pin vs one, not having VCC and/or GND connected) triggered what errors and output.
-Also update the help text with troubleshooting info. 
+- [ ] The original error I was getting about port 5 something Amaranth error, submit a PR suggesting to check your cables connections in that error message. Do some testing to confirm exactly what conditions (using two connected cables for each pin vs one, not having VCC and/or GND connected) triggered what errors and output.
+- [ ] Also update the help text with troubleshooting info. 
 
 
 # Useful Links
@@ -799,4 +800,3 @@ I'm using [Glasgow hardware revision c3](https://glasgow-embedded.org/latest/rev
 Flashrom - v 1.4.0 - Installed via Homebrew. 
 
 MacOS Sonoma 14.6.1 
-
